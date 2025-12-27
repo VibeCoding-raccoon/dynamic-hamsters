@@ -1,0 +1,23 @@
+# exec() can also very easily be used for optimizing code to make it shorter, though a bit less readable.
+# We can use it to optimize a segment of code where same parameters or actions are being taken on the objects.
+
+#Sample Code for making two displays in TKinter
+
+#bash
+pip install tkinter 
+
+#python
+import tkinter as tk
+
+root=tk.Tk()    #initializing root display
+
+def init_screen(name):
+    exec(name+"=tk.Toplevel(root)")    #makes a toplevel stored in object 'name'
+    exec(name+".title('Toplevel made by def function and exec()')")   #you can't use the same type of quotes for strings in string code that you use for opening and closing the string inside exec().
+    exec(name+".geometry('300x200')")    #defines x and y geometry
+    exec(name+".attributes('-alpha', 0.75)")    #defines transparency (1-opaque and 0-transparent)
+    exec(name+".config(bg='mediumseagreen')")    #configures background to make bg-color a pastel dullish green
+
+init_screen("screen1")
+init_screen("screen2")
+
