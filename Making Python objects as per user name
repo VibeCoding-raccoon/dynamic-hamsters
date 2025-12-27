@@ -1,0 +1,11 @@
+name=input('enter name of your cute little hamster")
+age=int(input('enter the age of your hamster please"))
+
+code=name+"={'animal':hamster, 'age':"+age+"}"
+exec(code)
+
+exec("print("+name+")")
+
+#exec can execute code if the code is string
+#it removes the outer quotes so if we used a string with exec, it would turn into a placeholder object
+#for example: if name was "Whiskers" then exec would remove the quotes and "Whiskers" Would become Whiskers as an object
